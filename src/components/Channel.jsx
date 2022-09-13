@@ -2,6 +2,8 @@ import { collection, limit, orderBy, query } from "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
 import Form from "./Form";
 import Messages from "./Messages";
+import Chip from '@mui/material/Chip';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Channel() {
   const firestore = useFirestore();
@@ -19,10 +21,11 @@ export default function Channel() {
   return (
     <div>
       {status === "loading" ? (
-        <span>loading...</span>
+        <CircularProgress />        
       ) : (
         <Messages messages={messages} />
       )}
+      <Chip label="viesti" variant="outlined" />
       <Form messagesCollection={messagesCollection} />
     </div>
   );

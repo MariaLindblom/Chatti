@@ -42,7 +42,3 @@ export default function Form({ messagesCollection }) {
     </form>
   );
 }
-export function viestit(message) {
-  viestit = <Chip label="moi" variant="outlined" />
-  return viestit
-}
