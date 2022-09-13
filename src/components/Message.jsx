@@ -1,3 +1,5 @@
+import Chip from '@mui/material/Chip';
+
 const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
   hour: "numeric",
   minute: "numeric",
@@ -8,17 +10,15 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
 export default function Message({ createdAt, text, displayName }) {
   return (
     <div>
-      [
+      <Chip label={<>
       {createdAt?.seconds ? (
         <span>{dateTimeFormat.format(new Date(createdAt.seconds * 1000))}</span>
       ) : null}
-      ]{" "}
-      <strong>
-        {"<"}
+      {" "}
+      <strong>        
         {displayName ? displayName : null}
-        {">"}
       </strong>{" "}
-      {text}
+      {text}</>} variant="outlined"  />
     </div>
   );
 }
