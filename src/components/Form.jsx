@@ -1,6 +1,7 @@
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { useUser } from "reactfire";
+import { Button } from "@mui/material";
 
 export default function Form({ messagesCollection }) {
   const [newMessage, setNewMessage] = useState("");
@@ -37,7 +38,11 @@ export default function Form({ messagesCollection }) {
         onChange={handleChange}
         placeholder="Type your message here..."
       />
-      <button disabled={!newMessage}>Send</button>
+      <Button variant="outlined" disabled={!newMessage}>Send</Button>
     </form>
   );
+}
+export function viestit(message) {
+  viestit = <Chip label="moi" variant="outlined" />
+  return viestit
 }
