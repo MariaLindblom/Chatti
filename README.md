@@ -1,4 +1,4 @@
-# Firebase Example
+# Realiaikainen chatti
 
 https://marialindblom.github.io/Chatti/
 
