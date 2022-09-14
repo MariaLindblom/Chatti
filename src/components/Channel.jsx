@@ -11,7 +11,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Menu, MenuItem } from "@mui/material";
 
 export function MenuAppBar () {
-  const [AuthenticatorAssertionResponse, setAuth] = React.useState(true);
+  const [auth, setAuth] = React.useState(true);
   const [anchorE1, setAnchorE1] = React.useState(null);
 
   const handleChange = (event) => {
