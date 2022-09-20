@@ -1,7 +1,8 @@
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { useUser } from "reactfire";
-import { Button } from "@mui/material";
+import { Button } from "@mui/material/Button";
+import { Input } from '@mui/material/Input';
 
 export default function Form({ messagesCollection }) {
   const [newMessage, setNewMessage] = useState("");
@@ -30,10 +31,10 @@ export default function Form({ messagesCollection }) {
       setNewMessage("");
     }
   };
-
+  // <Input placeholder="Type your message here..." inputProps={ariaLabel} />
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <Input
         value={newMessage}
         onChange={handleChange}
         placeholder="Type your message here..."
