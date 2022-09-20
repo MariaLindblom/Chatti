@@ -31,7 +31,7 @@ export default function Form({ messagesCollection }) {
       setNewMessage("");
     }
   };
-  // <Input placeholder="Type your message here..." inputProps={ariaLabel} />
+
   return (
     <form onSubmit={handleSubmit}>
       <Input
