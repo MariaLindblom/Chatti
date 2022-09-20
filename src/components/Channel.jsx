@@ -1,6 +1,6 @@
 import { collection, limit, orderBy, query } from "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
-import Form from "./Form";
+import Form from './Form';
 import Messages from "./Messages";
 import CircularProgress from '@mui/material/CircularProgress';
 import AppBar from '@mui/material/AppBar';
@@ -97,7 +97,7 @@ export default function Channel() {
       ) : (
         <Messages messages={messages} />
       )}
-      <Form messagesCollection={messagesCollection} />
+      <Form messagesCollection={messagesCollection} />  
     </div>
   );
 }

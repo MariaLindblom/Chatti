@@ -1,9 +1,8 @@
 import { useSigninCheck } from "reactfire";
 import Channel from "./components/Channel";
-import SignInOutButton from "./components/SignInOutButton";
 import * as React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
-import Appbar from "./components/Appbar";
+import Ylapalkki from "./components/Ylapalkki";
 import Alapalkki from "./components/Alapalkki";
 
 export default function App() {
@@ -15,7 +14,7 @@ export default function App() {
 
   return (
     <>
-      <Appbar />
+      <Ylapalkki />
       {signInCheckResult.signedIn && <Channel />}
       <Alapalkki />
     </>

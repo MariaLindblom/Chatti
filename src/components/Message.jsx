@@ -9,7 +9,6 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
 
 export default function Message({ createdAt, text, displayName }) {
   return (
-    <div>
       <Chip label={<>
       {createdAt?.seconds ? (
         <span>{dateTimeFormat.format(new Date(createdAt.seconds * 1000))}</span>
@@ -19,6 +18,5 @@ export default function Message({ createdAt, text, displayName }) {
         {displayName ? displayName : null}
       </strong>{" "}
       {text}</>} variant="outlined"  />
-    </div>
   );
 }
