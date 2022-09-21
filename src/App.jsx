@@ -16,7 +16,6 @@ export default function App() {
     <>
       <Ylapalkki />
       {signInCheckResult.signedIn && <Channel />}
-      <Alapalkki />
     </>
   );
 }

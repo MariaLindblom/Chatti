@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from "@mui/material/IconButton";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Menu, MenuItem } from "@mui/material";
+import Alapalkki from './Alapalkki';
 
 export function MenuAppBar () {
   const [auth, setAuth] = React.useState(true);
@@ -97,7 +98,7 @@ export default function Channel() {
       ) : (
         <Messages messages={messages} />
       )}
-      <Form messagesCollection={messagesCollection} />  
+      <Alapalkki messagesCollection={messagesCollection} />  
     </div>
   );
 }

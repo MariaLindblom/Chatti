@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import Chip from '@mui/material/Chip';
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
@@ -9,7 +10,7 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
 
 export default function Message({ createdAt, text, displayName }) {
   return (
-      <Chip label={<>
+      <Chip sx={{marginBottom: 1,height:"100%"}} label={<Typography sx={{whiteSpace:"normal"}}>
       {createdAt?.seconds ? (
         <span>{dateTimeFormat.format(new Date(createdAt.seconds * 1000))}</span>
       ) : null}
@@ -17,6 +18,6 @@ export default function Message({ createdAt, text, displayName }) {
       <strong>        
         {displayName ? displayName : null}
       </strong>{" "}
-      {text}</>} variant="outlined"  />
+      {text}</Typography>} variant="outlined"  />
   );
 }
