@@ -33,8 +33,10 @@ export default function Form({ messagesCollection }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <Input
+        disableUnderline
+        inputProps={{ style: { color:"white" } }}
         value={newMessage}
         onChange={handleChange}
         placeholder="Type your message here..."
