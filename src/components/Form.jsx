@@ -3,6 +3,28 @@ import { useState } from "react";
 import { useUser } from "reactfire";
 import { Button } from "@mui/material";
 import { Input } from '@mui/material';
+import { styled } from '@mui/material';
+
+const CssTextField = styled(Input)({
+  '& label.Mui-focused': {
+    color: 'white',
+  },
+  '& .MuiInput-underline': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'white',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+});
+
 
 export default function Form({ messagesCollection }) {
   const [newMessage, setNewMessage] = useState("");
