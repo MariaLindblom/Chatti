@@ -35,6 +35,6 @@ export default function Message({ createdAt, text, displayName, id, uid }) {
             Poista
             </Button>
       ) : null}
-       </>
+    </>
   );    
 }
