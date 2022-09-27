@@ -27,7 +27,7 @@ export default function Message({ createdAt, text, displayName, id, uid }) {
       </strong>{" "}
       {text} </Typography>} variant="outlined"  />
       {uid === user.uid ? (
-        <Button variant="contained"
+        <Button variant="contained" size="small"
           onClick={async () => {
             await deleteDoc(doc(firestore, "messages", id));
           }}
