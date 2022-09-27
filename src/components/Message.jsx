@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { Button } from '@mui/material';
-import { deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, updateDoc, doc } from "firebase/firestore";
 import { useFirestore, useUser } from "reactfire";
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
@@ -34,6 +34,15 @@ export default function Message({ createdAt, text, displayName, id, uid }) {
           >
             Poista
             </Button>
+      ) : null}
+      {uid === user.uid ? (
+        <Button variant="contained" color="secondary" size="small"
+        onClick={async () => {
+          await updateDoc(doc(firestore, "messages", id));
+        }}
+        >
+          Muokkaa
+        </Button>
       ) : null}
     </>
   );    
