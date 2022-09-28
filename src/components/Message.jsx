@@ -1,8 +1,9 @@
 import { Typography } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { Button } from '@mui/material';
-import { deleteDoc, updateDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc } from "firebase/firestore";
 import { useFirestore, useUser } from "reactfire";
+import ViestinMuokkaus from './ViestinMuokkaus';
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
   hour: "numeric",
@@ -36,13 +37,7 @@ export default function Message({ createdAt, text, displayName, id, uid }) {
             </Button>
       ) : null}
       {uid === user.uid ? (
-        <Button variant="contained" color="secondary" size="small"
-        onClick={async () => {
-          await updateDoc(doc(firestore, "messages", id));
-        }}
-        >
-          Muokkaa
-        </Button>
+        <ViestinMuokkaus id={id} text={text} />
       ) : null}
     </>
   );    
